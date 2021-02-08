@@ -8,7 +8,7 @@ Learning how to cook can be quite daunting, but it doesn't have to be with quick
 - User can turn the page by scrolling up and down
 
 ### Wireframes
-![alt text](https://github.com/jamhanpar/Robinhoot/blob/main/0.%20Features/landing_page.png?raw=true)
+![alt text](https://github.com/jamhanpar/javascript_project/blob/main/0.%20planning/images/wireframe.PNG?raw=true)
 
 /src
     - /assets
