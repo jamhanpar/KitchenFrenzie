@@ -18,12 +18,23 @@ Learning how to cook can be quite daunting, but it doesn't have to be with quick
         - Board.js
         - Pot.js
         - Stove.js
+        - Knife.js
+        - Book.js
+        - Plate.js
         - Tutorial.js
     - /stylesheets
         - [...]
 
 ### Architecture and Technology
+- Three.js
 
 ### Implementation Timeline
+- Day 1: Drag and drop ingredients
+- Day 2: Knife Chopping Up and Down
+- Day 3: Stove Knob Adjustment
+- Day 4: Flip Pages on Scroll
+- Day 5: Timer
 
 ### Bonus Features
+- Add new ingredients
+- Menu Selection
