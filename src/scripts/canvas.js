@@ -1,4 +1,4 @@
-import { drawFood } from "./food";
+import { drawItems, moveItems } from "./item";
 import { drawBoard } from "./board";
 import { drawUtensils } from "./utensils";
 import { drawProps } from "./props";
@@ -11,17 +11,14 @@ canvas.width = "100%";
 canvas.height = "100%";
 
 export const drawEverything = () => {
-    drawCanvas(),
-    drawBoard(),
-    drawFood(),
-    drawUtensils(),
-    drawPots(),
-    drawProps(),
-    drawKnobs()
+  drawCanvas(),
+  drawBoard(),
+  drawUtensils(),
+  drawPots(),
+  drawProps(),
+  drawKnobs(),
+  drawItems(),
+  moveItems()
 };
 
-const drawCanvas = () => {
-    // ctx.fillStyle = 'orange';
-    // ctx.fillRect(0, 0, canvas.width, canvas.height);
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-};
+const drawCanvas = () => ctx.clearRect(0, 0, canvas.width, canvas.height);
