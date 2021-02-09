@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/reset.css">
+    <link rel="stylesheet" href="./styles/styles.css">
+    <title>Cooking Tutorial</title>
+</head>
+
+<body>
+    <canvas id="canvas" width='900' height='600'></canvas>
+
+    <script>
+        let canvas;
+        let ctx;
+
+        window.onload = function () {
+            canvas = document.getElementById('canvas');
+            ctx = canvas.getContext('2d');
+            canvas.width = window.innerWidth - 25;
+            canvas.height = window.innerHeight - 25;
+
+            const framesPerSecond = 30;
+            setInterval(redraw, 1000/framesPerSecond);
+        }
+
+        function redraw() {
+            drawEverything();
+        }
+
+        function drawEverything() {
+            drawRect(0, 25, canvas.width, canvas.height, 'orange');
+        }
+
+        function drawRect(leftX, topY, width, height, drawColor) {
+            ctx.fillStyle = drawColor;
+            ctx.fillRect(leftX, topY, width, height)
+        }
+    </script>
+</body>
+
+</html>

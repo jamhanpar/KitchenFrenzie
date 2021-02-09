@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="gameCanvas" width="800" height="600"></canvas>
+
+    <script>
+        let canvas;
+        let ctx;
+        let ballX = 50;
+        let ballY = 50;
+        let ballSpeedX = 10;
+        let ballSpeedY = -4;
+
+        let paddle1X = 250;
+        const PADDLE_WIDTH = 75;
+
+        let lives = 3;
+        const LOSING_SCORE = 1;
+
+        let showingLoseScreen = false;
+
+        window.onload = function() {
+            canvas = document.getElementById('gameCanvas');
+            ctx = canvas.getContext('2d');
+
+            const framesPerSecond = 60;
+            setInterval(redraw, 1000/framesPerSecond);
+
+            canvas.addEventListener('mousemove', function(e) {
+                let mousePos = calculateMousePos(e);
+                paddle1X = mousePos.x-(PADDLE_WIDTH / 2);
+            })
+
+            canvas.addEventListener('mousedown', handleMouseClick);
+        }
+
+        function handleMouseClick(e) {
+            if (showingLoseScreen) {
+                lives = 3;
+                showingLoseScreen = false;
+            }
+        }
+
+        function redraw() {
+            moveEverything();
+            drawEverything();
+        }
+
+        function ballReset() {
+            if (lives <= LOSING_SCORE) {
+                showingLoseScreen = true;
+            }
+
+            ballSpeedY = -ballSpeedY
+            ballX = canvas.width/2;
+            ballY = canvas.height/2;
+        }
+
+        function moveEverything() {
+            if (showingLoseScreen) return;
+
+            ballX = ballX + ballSpeedX;
+            ballY = ballY + ballSpeedY;
+
+            if (ballX > canvas.width) {
+                ballSpeedX = -ballSpeedX;
+            }
+
+            if (ballX < 0) {
+                ballSpeedX = -ballSpeedX;
+            }
+
+            if (ballY > canvas.height) {
+                if (ballX > paddle1X && ballX < (paddle1X + PADDLE_WIDTH)) {
+                    ballSpeedY = -ballSpeedY;
+
+                    let deltaX = ballX - (paddle1X + PADDLE_WIDTH/2);
+                    ballSpeedX = deltaX * 0.35;
+                } else {
+                    // must reset reduce score before resetting
+                    lives--;
+                    ballReset();
+                }
+            }
+            
+            if (ballY < 0) {
+                ballSpeedY = -ballSpeedY;
+            }
+        }
+        
+        function drawEverything() {
+            // order matters first means bottom layer and last means top layer
+            // draws game board
+            colorRect(0, 0, canvas.width, canvas.height, 'black');
+
+            if (showingLoseScreen) {
+                ctx.fillStyle = 'white';
+                ctx.font = '13px serif';
+                ctx.fillText("You Lose! Click to play again.", canvas.width/2-80, canvas.height/2);
+                return;
+            }
+            
+            // draw bottom paddle
+            colorRect(paddle1X, 595, PADDLE_WIDTH, 10, 'white');
+            
+            // draws red ball
+            colorCircle(ballX, ballY, 8, 'red')
+
+            // adding text
+            ctx.fillStyle = 'white';
+            // fillText(left, top)
+            ctx.font = '13px serif';
+            ctx.fillText("lives: ", canvas.width-60, 25)
+            ctx.fillText(lives, canvas.width - 25, 25)
+        }
+        
+        function colorRect(leftX, topY, width, height, drawColor) {
+            ctx.fillStyle = drawColor;
+            ctx.fillRect(leftX, topY, width, height)
+        }
+        
+        function colorCircle(centerX, centerY, radius, drawColor) {
+            // colorRect(ballX, 200, 5, 5, 'red');
+            // or
+            ctx.fillStyle = drawColor;
+            // what is beginPath?
+            ctx.beginPath();
+            // arc(x, center of circl, radius, 0, radians, counter-clockwise)
+            ctx.arc(centerX, centerY, radius, 0, Math.PI * 2, true);
+            ctx.fill();
+        }
+
+        function calculateMousePos(e) {
+            // getting the bounds of the canvas
+            let rect = canvas.getBoundingClientRect();
+            // handle of the document on the page which is canvas
+            let root = document.documentElement;
+
+            // getting x and y coordinates within the canvas space
+            let mouseX = e.clientX - rect.left - root.scrollLeft;
+            let mouseY = e.clientY - rect.top - root.scrollTop;
+
+            return {
+                x: mouseX,
+                y: mouseY
+            };
+        }
+
+    </script>
+</body>
+</html>

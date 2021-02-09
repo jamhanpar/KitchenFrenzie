@@ -1,19 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="./dist/main.css" />
-    <link rel="stylesheet" href="./src/styles/box.scss">
-    <title>JS Project Skeleton</title>
-  </head>
 
-  <body>
-    <button id="canvas-demo">Canvas Demo</button>
-    <button id="DOM-demo">DOM Demo</button>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="./src/styles/reset.css">
+  <link rel="stylesheet" href="./dist/main.css" />
+  <link rel="stylesheet" href="./src/styles/styles.css"/>
+  <title>JS Cooking Tutorial</title>
+</head>
 
-    <div className="box">Box</div>
-    <script src="./dist/main.js"></script>
-  </body>
+<body>
+  <div class="container">
+    <div class='canvas-container'>
+      <img class="bg-img" src="src/images/kitchen_top.jpg">
+      <canvas id="game-canvas"></canvas>
+    </div>
+  </div>
+  <script src="./dist/main.js"></script>
+
+  <script>
+    const canvas = document.getElementById("game-canvas"),
+        ctx = canvas.getContext("2d");
+
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight-3;
+  </script>
+</body>
+
 </html>
