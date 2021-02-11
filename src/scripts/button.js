@@ -1,7 +1,5 @@
 import { canvas, ctx } from './canvas';
 
-export let GAME_MODE = false;
-
 class Button {
     constructor(button) {
         this.button = button;
@@ -45,8 +43,7 @@ class Button {
                     window.open("https://github.com/jamhanpar");
                     break;
                 case 'Play Game':
-                    GAME_MODE = !GAME_MODE;
-                    console.log(GAME_MODE);
+                    toggleGameMode();
                     break;
                 default:
                     break;
@@ -55,18 +52,29 @@ class Button {
     }
 }
 
+// add new buttons
 const buttons = {
     linkedIn: { title: 'LinkedIn', img: 'fruit34', leftX: 0.018, topY: 0.015, width: 40, height: 40 },
     github: { title: 'Github', img:'fruit30', leftX: 0.05, topY: 0.015, width: 40, height: 40 },
     playGame: { title: 'Play Game', img: '', leftX: 0.948, topY: 0.015, width: 110, height: 40  },
+    // giveUp: { title: 'Give Up', img: '', leftX: 0.948, topY: 0.015, width: 110, height: 40  },
 };
 
+// button names and list of button objects
 export const buttonNames = Object.keys(buttons);
 export const buttonList = {};
 
+// draw all buttons
 export function drawButtons() {
     buttonNames.forEach(name => {
         buttonList[name] ||= new Button(buttons[name]);
         buttonList[name].animate();
     })
+}
+
+// toggle to game mode
+export let GAME_MODE = false;
+
+export function toggleGameMode() {
+    GAME_MODE = !GAME_MODE;
 }

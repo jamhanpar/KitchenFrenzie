@@ -4,10 +4,12 @@ class Ball {
     constructor() {
         this.x = canvas.width * 0.5;
         this.y = canvas.height * 0.5;
+        this.width = 60;
+        this.height = 60;
         this.radius = 8;
         this.color = 'red';
-        this.velocityX = 10;
-        this.velocityY = 5;
+        this.velocityX = 8;
+        this.velocityY = 3;
     }
 
     animate() {
@@ -16,30 +18,34 @@ class Ball {
     }
 
     draw() {
-        ctx.fillStyle = this.color;
-        ctx.beginPath();
-        // arc(x, center of circl, radius, 0, radians, counter-clockwise)
-        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, true);
-        ctx.fill();
+        let img = new Image();
+        img.src = `src/images/FOOD/bread11.png`;
+        ctx.drawImage(img, this.x, this.y, this.width, this.height);
     }
 
     move() {
         this.x += this.velocityX;
         this.y += this.velocityY;
 
-        if (this.x > canvas.width || this.x < 0) {
+        if (this.x + this.width > canvas.width || this.x < 0) {
           this.velocityX = -this.velocityX;
         }
 
-        if (this.y > canvas.height || this.y < 0) {
+        if (this.y + this.height > canvas.height || this.y < 0) {
           this.velocityY = -this.velocityY;
         }
     }
+
+    resetBall() {
+        this.x = canvas.width / 2;
+        this.y = canvas.height / 2;
+    }
 }
 
-let ball;
+export let ball;
 
 export function animateBall() {
+    console.log(ball);
     ball ||= new Ball();
     ball.animate();
 }
