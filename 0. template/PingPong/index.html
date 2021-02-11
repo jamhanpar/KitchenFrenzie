@@ -37,17 +37,17 @@
 
             canvas.addEventListener('mousedown', handleMouseClick);
         }
-
+        
+        function redraw() {
+            moveEverything();
+            drawEverything();
+        }
+        
         function handleMouseClick(e) {
             if (showingLoseScreen) {
                 lives = 3;
                 showingLoseScreen = false;
             }
-        }
-
-        function redraw() {
-            moveEverything();
-            drawEverything();
         }
 
         function ballReset() {
