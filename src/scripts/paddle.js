@@ -1,30 +1,32 @@
 import { canvas, ctx } from "./canvas";
+import { calculateMousePos } from "./utils";
 
 class Paddle {
-  constructor(paddleWidth) {
-    this.x = canvas.width / 2;
+  constructor() {
+    this.x = 30;
     this.y = 30;
-    this.width = paddleWidth;
+    this.width = 200;
     this.height = 30;
     this.color = "black";
   }
 
-  animate(posX) {
-    this.draw(posX);
-  }
-
-  draw(posX) {
-    posX ||= this.x;
-
+  draw() {
     let img = new Image();
     img.src = `src/images/FOOD/tool26a.png`;
-    ctx.drawImage(img, posX, this.y, this.width, this.height);
+    ctx.drawImage(img, this.x, this.y, this.width, this.height);
   }
 }
 
-let paddle;
+export const paddle = new Paddle();
 
-export function animatePaddle(paddlePosX, paddleWidth) {
-  paddle ||= new Paddle(paddleWidth);
-  paddle.animate(paddlePosX);
+export function animatePaddle() {
+  paddle.x = mouse.x - paddle.width / 2;
+  paddle.draw();
 }
+
+let mouse;
+
+// move paddle based on mouse movement
+window.addEventListener("mousemove", (e) => {
+  mouse = calculateMousePos(e);
+});

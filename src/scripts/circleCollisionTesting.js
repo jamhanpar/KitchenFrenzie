@@ -9,10 +9,6 @@ class Circle {
     this.color = color;
   }
 
-  update() {
-    this.draw();
-  }
-
   draw() {
     // what is the purpose of beginPath and closePath?
     ctx.beginPath();
@@ -50,8 +46,8 @@ export function animate() {
     c2.color = "black";
     console.log("false");
   }
-  c1.update();
-  c2.update();
+  c1.draw();
+  c2.draw();
 }
 
 export function run() {

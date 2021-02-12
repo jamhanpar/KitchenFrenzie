@@ -1,6 +1,3 @@
-// import { run } from './collisionTesting';
-// import { drawKnobs } from "./knobs";
-// import { drawBoundaries } from "./boundaries";
 import { calculateMousePos } from './utils';
 import { propNames, drawnProps, drawProps, animateAllItems } from "./props";
 import { animateBall } from "./ball";
@@ -19,7 +16,7 @@ export const drawCanvas = () => {
   if (GAME_MODE) {
     animateAllItems()
     animateBall()
-    animatePaddle(paddlePosX, paddleWidth)
+    animatePaddle()
   } else {
     drawProps()
     drawButtons()
@@ -42,14 +39,4 @@ canvas.addEventListener("click", function(e) {
       buttonList[name].handleClick(mouse.x, mouse.y);
     })
   }
-});
-
-// dynamic paddle positioning
-let paddlePosX;
-let paddleWidth = 150;
-
-// move paddle based on mouse movement
-canvas.addEventListener("mousemove", (e) => {
-  let mouse = calculateMousePos(e);
-  paddlePosX = mouse.x - paddleWidth / 2;
 });
