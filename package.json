@@ -14,7 +14,7 @@
     "webpack:watch": "webpack --watch --config webpack.dev.js && NODE_ENV=development",
     "webpack:build": "webpack --config webpack.prod.js  --optimize-minimize && NODE_ENV=production"
   },
-  "author": "mrcjbradley",
+  "author": "jamhanpar",
   "license": "ISC",
   "dependencies": {},
   "devDependencies": {

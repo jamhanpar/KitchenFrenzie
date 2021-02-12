@@ -16,7 +16,7 @@ class Button {
         // if button has an icon, render the icon, otherwise create a button with title
         if (this.button.img) {
             let img = new Image();
-            img.src = `src/images/FOOD/${this.button.img}.png`;
+            img.src = `src/images/ICON/${this.button.img}.png`;
             ctx.drawImage(img, this.x, this.y, this.button.width, this.button.height);
         } else {
             if (this.button.border) ctx.strokeRect(this.x, this.y, this.button.width, this.button.height)
@@ -68,8 +68,8 @@ class Button {
 
 // add new buttons
 const buttons = {
-    linkedIn: { title: 'LinkedIn', img: 'fruit34', leftX: 0.018, topY: 0.015, width: 40, height: 40, border: false },
-    github: { title: 'Github', img:'fruit30', leftX: 0.05, topY: 0.015, width: 40, height: 40, border: false },
+    github: { title: 'Github', img:'github-icon', leftX: 0.018, topY: 0.015, width: 40, height: 40, border: false },
+    linkedIn: { title: 'LinkedIn', img: 'linkedIn-icon', leftX: 0.05, topY: 0.015, width: 40, height: 40, border: false},
     playGame: { title: 'Play Game', img: '', leftX: 0.95, topY: 0.015, width: 110, height: 40, border: true },
     exitGame: { title: 'x', img: '', leftX: 0.990, topY: 0.015, width: 16, height: 18, border: false },
 };
