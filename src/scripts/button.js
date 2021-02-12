@@ -1,16 +1,15 @@
 import { canvas, ctx } from './canvas';
+import { game } from './game';
 
 class Button {
     constructor(button) {
         this.button = button;
-        this.x = canvas.width * this.button.leftX - this.button.width/3;
+        this.x = canvas.width * this.button.leftX;
         this.y = canvas.height * this.button.topY;
-        this.txtPosX = this.x + this.button.width * 0.1;
-        this.txtPosY = this.y + 25;
-    }
-
-    animate() {
-        this.draw();
+        if (this.button.title === 'x') {
+            this.x -= 3;
+            this.y -= 14;
+        }
     }
 
     draw() {
@@ -20,10 +19,18 @@ class Button {
             img.src = `src/images/FOOD/${this.button.img}.png`;
             ctx.drawImage(img, this.x, this.y, this.button.width, this.button.height);
         } else {
-            ctx.strokeRect(this.x, this.y, this.button.width, this.button.height)
+            if (this.button.border) ctx.strokeRect(this.x, this.y, this.button.width, this.button.height)
+            
             ctx.fillStyle = 'black';
             ctx.font = '20px sans serif';
-            ctx.fillText(this.button.title, this.txtPosX, this.txtPosY);
+
+            if (this.button.title === 'Play Game') {
+                ctx.fillText(this.button.title, this.x+10, this.y+25);
+            } else if (this.button.title === 'x') {
+                ctx.fillText(this.button.title, this.x+3, this.y+14);
+            } else {
+                ctx.fillText(this.button.title, this.x, this.y);
+            }
         }
     }
 
@@ -33,7 +40,8 @@ class Button {
             this.x + this.button.width > xmouse &&
             this.y < ymouse &&
             this.y + this.button.height > ymouse
-        ) { 
+            ) { 
+            console.log(`${this.button} button clicked`);
             // console.log(`${this.button.title} has been clicked`);
             switch(this.button.title) {
                 case 'LinkedIn':
@@ -43,7 +51,13 @@ class Button {
                     window.open("https://github.com/jamhanpar");
                     break;
                 case 'Play Game':
+                    console.log('game is played')
                     toggleGameMode();
+                    break;
+                case 'x':
+                    console.log('x button clicked')
+                    // refresh page after click
+                    window.location.reload(false);
                     break;
                 default:
                     break;
@@ -54,22 +68,32 @@ class Button {
 
 // add new buttons
 const buttons = {
-    linkedIn: { title: 'LinkedIn', img: 'fruit34', leftX: 0.018, topY: 0.015, width: 40, height: 40 },
-    github: { title: 'Github', img:'fruit30', leftX: 0.05, topY: 0.015, width: 40, height: 40 },
-    playGame: { title: 'Play Game', img: '', leftX: 0.948, topY: 0.015, width: 110, height: 40  },
-    // giveUp: { title: 'Give Up', img: '', leftX: 0.948, topY: 0.015, width: 110, height: 40  },
+    linkedIn: { title: 'LinkedIn', img: 'fruit34', leftX: 0.018, topY: 0.015, width: 40, height: 40, border: false },
+    github: { title: 'Github', img:'fruit30', leftX: 0.05, topY: 0.015, width: 40, height: 40, border: false },
+    playGame: { title: 'Play Game', img: '', leftX: 0.95, topY: 0.015, width: 110, height: 40, border: true },
+    exitGame: { title: 'x', img: '', leftX: 0.990, topY: 0.015, width: 16, height: 18, border: false },
 };
 
 // button names and list of button objects
 export const buttonNames = Object.keys(buttons);
 export const buttonList = {};
 
-// draw all buttons
-export function drawButtons() {
+function initializeProps() {
     buttonNames.forEach(name => {
         buttonList[name] ||= new Button(buttons[name]);
-        buttonList[name].animate();
     })
+}
+
+// draw all buttons
+export function drawButtons() {
+    initializeProps();
+    if (!GAME_MODE) {
+        buttonNames.slice(0, 3).forEach(name => {
+            buttonList[name].draw();
+        })
+    } else {
+        buttonList['exitGame'].draw();
+    }
 }
 
 // toggle to game mode
@@ -77,4 +101,6 @@ export let GAME_MODE = false;
 
 export function toggleGameMode() {
     GAME_MODE = !GAME_MODE;
+    game.lives = 3;
+    game.showEndGameMessage = false;
 }

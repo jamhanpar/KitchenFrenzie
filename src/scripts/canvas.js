@@ -1,8 +1,7 @@
 import { calculateMousePos } from './utils';
-import { propNames, drawnProps, drawProps, animateAllItems } from "./props";
-import { animateBall } from "./ball";
-import { animatePaddle } from "./paddle";
+import { propNames, drawnProps, drawProps } from "./props";
 import { buttonNames, buttonList, drawButtons, GAME_MODE } from "./button";
+import { animateGame } from "./game";
 
 export const canvas = document.getElementById("game-canvas");
 export const ctx = canvas.getContext("2d");
@@ -14,17 +13,16 @@ canvas.height = window.innerHeight;
 export const drawCanvas = () => {
   clearCanvas()
   if (GAME_MODE) {
-    animateAllItems()
-    animateBall()
-    animatePaddle()
+    animateGame()
   } else {
     drawProps()
-    drawButtons()
   }
+  drawButtons()
 };
 
 const clearCanvas = () => ctx.clearRect(0, 0, canvas.width, canvas.height);
 
+// click event listener
 canvas.addEventListener("click", function(e) {
   e.preventDefault();
 
@@ -38,5 +36,8 @@ canvas.addEventListener("click", function(e) {
     buttonNames.forEach(name => {
       buttonList[name].handleClick(mouse.x, mouse.y);
     })
+  } else {
+    console.log(buttonList['exitGame'])
+    buttonList['exitGame'].handleClick(mouse.x, mouse.y);
   }
 });

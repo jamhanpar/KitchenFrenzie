@@ -1,5 +1,6 @@
 import { canvas, ctx } from "./canvas";
 import { paddle } from "./paddle";
+import { game } from "./game";
 
 class Ball {
   constructor() {
@@ -37,6 +38,8 @@ class Ball {
     }
 
     if (this.y < 0) {
+      game.lives--;
+      if (game.lives === 0) game.updateShowMessage;
       this.resetBall();
     }
   }
@@ -52,15 +55,19 @@ class Ball {
 export const ball = new Ball();
 
 function checkBallPaddleCollision() {
-    if (ball.y < (paddle.y + paddle.height) && ball.x > paddle.x && ball.x < (paddle.x + paddle.width)) {
-      ball.velocityY = -ball.velocityY;
-      ball.velocityX = -ball.velocityX;
-      let deltaX = ball.x - (paddle.x + (paddle.width / 2));
-      ball.velocityX = deltaX * 0.35;
-    }
+  if (
+    ball.y < paddle.y + paddle.height &&
+    ball.x > paddle.x &&
+    ball.x < paddle.x + paddle.width
+  ) {
+    ball.velocityY = -ball.velocityY;
+    ball.velocityX = -ball.velocityX;
+    let deltaX = ball.x - (paddle.x + paddle.width / 2);
+    ball.velocityX = deltaX * 0.35;
+  }
 }
 
 export function animateBall() {
-    checkBallPaddleCollision();
-    ball.animate();
+  checkBallPaddleCollision();
+  ball.animate();
 }
