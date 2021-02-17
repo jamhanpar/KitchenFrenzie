@@ -38,3 +38,7 @@ Learning how to cook can be quite daunting, but it doesn't have to be with quick
 ### Bonus Features
 - Add new ingredients
 - Menu Selection
+
+### Run Instructions
+- npm install
+- npm run webpack:build
