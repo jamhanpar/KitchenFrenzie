@@ -41,4 +41,4 @@ Learning how to cook can be quite daunting, but it doesn't have to be with quick
 
 ### Run Instructions
 - npm install
-- npm run webpack:build
+- npm run start
