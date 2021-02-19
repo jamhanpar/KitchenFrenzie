@@ -59,7 +59,7 @@ function showMessage() {
       );
       setTimeout(() => {
         window.location.reload(false);
-      }, 3000);
+      }, 5000);
       return;
     }
   } else {
