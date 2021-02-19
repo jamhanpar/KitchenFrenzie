@@ -12,16 +12,16 @@ class Game {
   }
 
   update() {
-      this.updateShowMessage();
+    this.updateShowMessage();
   }
 
   updateShowMessage() {
-      if (this.lives === 0) {
-          this.showEndGameMessage = true;
-          this.wonOrLost = false;
-      } else if (checkDrawnPropsEmpty()) {
-        this.showEndGameMessage = true;
-      }
+    if (this.lives === 0) {
+      this.showEndGameMessage = true;
+      this.wonOrLost = false;
+    } else if (checkDrawnPropsEmpty()) {
+      this.showEndGameMessage = true;
+    }
   }
 }
 
@@ -36,16 +36,30 @@ export const animateGame = () => {
 };
 
 function showMessage() {
-    ctx.fillStyle = "black";
-    ctx.font = "20px serif";
+  ctx.fillStyle = "black";
+  ctx.font = "20px serif";
   if (game.showEndGameMessage) {
     if (game.wonOrLost) {
-      ctx.fillText("You Won!", canvas.width / 2 - 40, canvas.height / 2);
-      setTimeout(() => { window.location.reload(false); }, 3000);
+      let winText = "You Won!";
+      ctx.fillText(
+        winText,
+        canvas.width / 2 - ctx.measureText(winText).width / 2,
+        canvas.height / 2
+      );
+      setTimeout(() => {
+        window.location.reload(false);
+      }, 3000);
       return;
     } else {
-      ctx.fillText("You lose! Better luck next time!", canvas.width / 2 - 110, canvas.height / 2);
-      setTimeout(() => { window.location.reload(false); }, 3000);
+      let loseText = "You lose! Better luck next time!";
+      ctx.fillText(
+        loseText,
+        canvas.width / 2 - ctx.measureText(loseText).width / 2,
+        canvas.height / 2
+      );
+      setTimeout(() => {
+        window.location.reload(false);
+      }, 3000);
       return;
     }
   } else {

@@ -63,7 +63,7 @@ function checkBallPaddleCollision() {
     ball.velocityY = -ball.velocityY;
     ball.velocityX = -ball.velocityX;
     let deltaX = ball.x - (paddle.x + paddle.width / 2);
-    ball.velocityX = deltaX * 0.35;
+    ball.velocityX = deltaX * 0.25;
   }
 }
 
