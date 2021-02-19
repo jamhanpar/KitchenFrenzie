@@ -1,7 +1,8 @@
 import { canvas, ctx } from "./canvas";
-import { animateAllItems, checkDrawnPropsEmpty } from "./props";
 import { animateBall } from "./ball";
 import { animatePaddle } from "./paddle";
+import { animateAllItems, checkDrawnPropsEmpty } from "./props";
+// import { GAME_MODE } from "./button";
 
 class Game {
   constructor() {
@@ -29,7 +30,6 @@ export const game = new Game();
 export const animateGame = () => {
   game.update();
   showMessage();
-  if (game.showEndGameMessage) return;
   animateAllItems();
   animateBall();
   animatePaddle();
@@ -40,11 +40,12 @@ function showMessage() {
     ctx.font = "20px serif";
   if (game.showEndGameMessage) {
     if (game.wonOrLost) {
-      ctx.fillText("You Won!", canvas.width / 2 - 80, canvas.height / 2);
+      ctx.fillText("You Won!", canvas.width / 2 - 40, canvas.height / 2);
+      setTimeout(() => { window.location.reload(false); }, 3000);
       return;
     } else {
-      ctx.fillText("Better luck next time!", canvas.width / 2 - 110, canvas.height / 2
-      );
+      ctx.fillText("You lose! Better luck next time!", canvas.width / 2 - 110, canvas.height / 2);
+      setTimeout(() => { window.location.reload(false); }, 3000);
       return;
     }
   } else {

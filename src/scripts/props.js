@@ -84,10 +84,10 @@ class Prop {
 }
 
 export const props = {
+  cuttingBoard: { name: 'cuttingBoard', img: "tool14", posWRatio: 0.33, posHRatio: 0.83, wRatio: 0.455, hRatio: 0.15 },
   pepper: { name: 'pepper', img: "tool33", posWRatio: 0.19, posHRatio: 0.65, wRatio: 0.025, hRatio: 0.04 },
   salt: { name: 'salt', img: "tool32", posWRatio: 0.18, posHRatio: 0.655, wRatio: 0.025, hRatio: 0.04 },
   selterWater: { name: 'selterWater', img: "tool13", posWRatio: 0.285, posHRatio: 0.595, wRatio: 0.03, hRatio: 0.10 },
-  cuttingBoard: { name: 'cuttingBoard', img: "tool14", posWRatio: 0.33, posHRatio: 0.83, wRatio: 0.455, hRatio: 0.15 },
   ginseng: { name: 'ginseng', img: "vegetable57", posWRatio: 0.35, posHRatio: 0.89, wRatio: 0.04, hRatio: 0.05 },
   redPepper: { name: 'redPepper', img: "vegetable23", posWRatio: 0.35, posHRatio: 0.82, wRatio: 0.09, hRatio: 0.06 },
   chiliPepper: { name: 'chiliPepper', img: "vegetable37", posWRatio: 0.44, posHRatio: 0.81, wRatio: 0.09, hRatio: 0.06 },
@@ -152,7 +152,8 @@ function checkPropsBallCollision() {
 }
 
 export function checkDrawnPropsEmpty() {
-  if (Object.keys(drawnProps).length === 0) {
+  console.log(propNames.length);
+  if (propNames.length === 0) {
     return true;
   }
   return false;

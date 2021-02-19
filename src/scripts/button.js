@@ -6,6 +6,7 @@ class Button {
         this.button = button;
         this.x = canvas.width * this.button.leftX;
         this.y = canvas.height * this.button.topY;
+        
         if (this.button.title === 'x') {
             this.x -= 3;
             this.y -= 14;
@@ -25,7 +26,7 @@ class Button {
             ctx.font = '20px sans serif';
 
             if (this.button.title === 'Play Game') {
-                ctx.fillText(this.button.title, this.x+10, this.y+25);
+                ctx.fillText(this.button.title, this.x+11, this.y+25);
             } else if (this.button.title === 'x') {
                 ctx.fillText(this.button.title, this.x+3, this.y+14);
             } else {
@@ -43,24 +44,25 @@ class Button {
             ) { 
             console.log(`${this.button} button clicked`);
             // console.log(`${this.button.title} has been clicked`);
-            switch(this.button.title) {
-                case 'LinkedIn':
-                    window.open("https://www.linkedin.com/in/jameshansungpark/");
-                    break;
-                case 'Github':
-                    window.open("https://github.com/jamhanpar");
-                    break;
-                case 'Play Game':
-                    console.log('game is played')
-                    toggleGameMode();
-                    break;
-                case 'x':
-                    console.log('x button clicked')
-                    // refresh page after click
-                    window.location.reload(false);
-                    break;
-                default:
-                    break;
+            switch (this.button.title) {
+              case "LinkedIn":
+                window.open("https://www.linkedin.com/in/jameshansungpark/");
+                break;
+              case "Github":
+                window.open("https://github.com/jamhanpar");
+                break;
+              case "AngelList":
+                window.open("https://angel.co/u/jameshansungpark");
+                break;
+              case "Play Game":
+                toggleGameMode();
+                break;
+              case "x":
+                // refresh page after click
+                window.location.reload(false);
+                break;
+              default:
+                break;
             }
         }
     }
@@ -68,9 +70,10 @@ class Button {
 
 // add new buttons
 const buttons = {
-    github: { title: 'Github', img:'github-icon', leftX: 0.018, topY: 0.015, width: 40, height: 40, border: false },
-    linkedIn: { title: 'LinkedIn', img: 'linkedIn-icon', leftX: 0.05, topY: 0.015, width: 40, height: 40, border: false},
-    playGame: { title: 'Play Game', img: '', leftX: 0.95, topY: 0.015, width: 110, height: 40, border: true },
+    linkedIn: { title: 'LinkedIn', img: 'linkedIn-icon', leftX: 0.02, topY: 0.015, width: 40, height: 40, border: false},
+    github: { title: 'Github', img:'github-icon', leftX: 0.05, topY: 0.015, width: 40, height: 40, border: false },
+    AngelList: { title: 'AngelList', img: 'angellist-icon', leftX: 0.08, topY: 0.015, width: 40, height: 40, border: false},
+    playGame: { title: 'Play Game', img: '', leftX: 0.11, topY: 0.015, width: 110, height: 40, border: true },
     exitGame: { title: 'x', img: '', leftX: 0.990, topY: 0.015, width: 16, height: 18, border: false },
 };
 
@@ -88,7 +91,7 @@ function initializeProps() {
 export function drawButtons() {
     initializeProps();
     if (!GAME_MODE) {
-        buttonNames.slice(0, 3).forEach(name => {
+        buttonNames.slice(0, 4).forEach(name => {
             buttonList[name].draw();
         })
     } else {
