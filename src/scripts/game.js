@@ -26,8 +26,11 @@ class Game {
 }
 
 export const game = new Game();
+const collisionSound = new Audio();
+collisionSound.src = "src/sfx/mechanical_clock_ticks.mp3";
 
 export const animateGame = () => {
+  collisionSound.play();
   game.update();
   showMessage();
   animateAllItems();
