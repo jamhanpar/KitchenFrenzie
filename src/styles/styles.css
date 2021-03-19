@@ -1,5 +1,6 @@
-body {
+html, body {
     background: #f2f6f8;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .bg-img {
