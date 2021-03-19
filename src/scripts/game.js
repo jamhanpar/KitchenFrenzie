@@ -29,41 +29,43 @@ export const game = new Game();
 
 export const animateGame = () => {
   game.update();
-  showMessage();
-  animateAllItems();
-  animateBall();
-  animatePaddle();
+  if (game.showEndGameMessage) { 
+    showMessage();
+  } else {
+    showLives();
+    animateAllItems();
+    animateBall();
+    animatePaddle();
+  }
 };
 
 function showMessage() {
   ctx.fillStyle = "black";
-  ctx.font = "20px serif";
-  if (game.showEndGameMessage) {
-    if (game.wonOrLost) {
-      let winText = "You Won!";
-      ctx.fillText(
-        winText,
-        canvas.width / 2 - ctx.measureText(winText).width / 2,
-        canvas.height / 2
-      );
-      setTimeout(() => {
-        window.location.reload(false);
-      }, 3000);
-      return;
-    } else {
-      let loseText = "You lose! Better luck next time!";
-      ctx.fillText(
-        loseText,
-        canvas.width / 2 - ctx.measureText(loseText).width / 2,
-        canvas.height / 2
-      );
-      setTimeout(() => {
-        window.location.reload(false);
-      }, 5000);
-      return;
-    }
+  ctx.font = "20px montserrat";
+  if (game.wonOrLost) {
+    let winText = "You Won!";
+    ctx.fillText(
+      winText,
+      canvas.width / 2 - ctx.measureText(winText).width / 2,
+      canvas.height / 2
+    );
+
+    setTimeout(() => { window.location.reload(false) }, 3000);
+    return;
   } else {
-    ctx.fillText("lives: ", canvas.width * 0.96, canvas.height * 0.017);
-    ctx.fillText(game.lives, canvas.width * 0.98, canvas.height * 0.017);
+    let loseText = "You lose! Better luck next time!";
+    ctx.fillText(
+      loseText,
+      canvas.width / 2 - ctx.measureText(loseText).width / 2,
+      canvas.height / 2
+    );
+    setTimeout(() => { window.location.reload(false) }, 3000);
+    return;
   }
+}
+
+function showLives() {
+  ctx.fillStyle = "black";
+  ctx.font = "20px montserrat";
+  ctx.fillText("lives: " + game.lives, canvas.width * 0.485, canvas.height * 0.075);
 }

@@ -57,10 +57,10 @@ class Button {
               case "Play Game":
                 toggleGameMode();
                 break;
-              case "x":
-                // refresh page after click
-                window.location.reload(false);
-                break;
+            //   case "x":
+            //     // refresh page after click
+            //     window.location.reload(false);
+            //     break;
               default:
                 break;
             }
@@ -73,8 +73,8 @@ const buttons = {
     linkedIn: { title: 'LinkedIn', img: 'linkedIn-icon', leftX: 0.02, topY: 0.015, width: 40, height: 40, border: false},
     github: { title: 'Github', img:'github-icon', leftX: 0.05, topY: 0.015, width: 40, height: 40, border: false },
     AngelList: { title: 'AngelList', img: 'angellist-icon', leftX: 0.08, topY: 0.015, width: 40, height: 40, border: false},
-    playGame: { title: 'Play Game', img: '', leftX: 0.11, topY: 0.015, width: 110, height: 40, border: true },
-    exitGame: { title: 'x', img: '', leftX: 0.990, topY: 0.015, width: 16, height: 18, border: false },
+    playGame: { title: 'Play Game', img: '', leftX: 0.48, topY: 0.55, width: 110, height: 40, border: true },
+    // exitGame: { title: 'x', img: '', leftX: 0.990, topY: 0.015, width: 16, height: 18, border: false },
 };
 
 // button names and list of button objects
