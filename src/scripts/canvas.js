@@ -24,7 +24,12 @@ const clearCanvas = () => ctx.clearRect(0, 0, canvas.width, canvas.height);
 function writeInstructions() {
   ctx.fillStyle = 'black';
   const fontSize = canvas.height * 0.015;
+  const width = 976;
+  const height = 200;
   ctx.font = fontSize.toString() + 'px sans serif';
+  ctx.fillStyle = 'rgba(212,176,128,0.7)';
+  ctx.fillRect(canvas.width*0.5-width/2, canvas.height*0.5-height/2, width, height);
+  ctx.fillStyle = "black";
   ctx.fillText("Made by James Park", canvas.width*0.021, canvas.height * 0.07);
   ctx.fillText("INSTRUCTIONS:", canvas.width / 12, canvas.height*0.27);
   ctx.fillText("To play the game, press the play button.", canvas.width / 12, canvas.height*0.30);
