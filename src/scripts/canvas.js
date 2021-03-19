@@ -29,6 +29,8 @@ function writeInstructions() {
   ctx.font = fontSize.toString() + 'px Montserrat';
   ctx.fillStyle = 'rgba(242,246,248,0.7)';
   ctx.fillRect(canvas.width*0.5-width/2, canvas.height*0.5-height/1.25, width, height);
+  // ctx.lineJoin = "round";
+  // ctx.lineWidth = 20;
   ctx.fillStyle = "black";
   ctx.fillText("Made by James Park", canvas.width*0.021, canvas.height * 0.97);
   ctx.fillText("INSTRUCTIONS:", canvas.width*0.3475, canvas.height*0.395);

@@ -20,7 +20,11 @@ class Button {
             img.src = `src/images/ICON/${this.button.img}.png`;
             ctx.drawImage(img, this.x, this.y, this.button.width, this.button.height);
         } else {
-            if (this.button.border) ctx.strokeRect(this.x, this.y, this.button.width, this.button.height)
+            if (this.button.border) {
+                ctx.strokeRect(this.x, this.y, this.button.width, this.button.height)
+                ctx.fillStyle = 'rgba(242,246,248,0.7)';
+                ctx.fillRect(this.x, this.y, this.button.width, this.button.height)
+            }
             
             ctx.fillStyle = 'black';
             ctx.font = '20px sans serif';
@@ -73,7 +77,7 @@ const buttons = {
     linkedIn: { title: 'LinkedIn', img: 'linkedIn-icon', leftX: 0.02, topY: 0.015, width: 40, height: 40, border: false},
     github: { title: 'Github', img:'github-icon', leftX: 0.05, topY: 0.015, width: 40, height: 40, border: false },
     AngelList: { title: 'AngelList', img: 'angellist-icon', leftX: 0.08, topY: 0.015, width: 40, height: 40, border: false},
-    playGame: { title: 'Play Game', img: '', leftX: 0.48, topY: 0.55, width: 110, height: 40, border: true },
+    playGame: { title: 'Play Game', img: '', leftX: 0.475, topY: 0.55, width: 110, height: 40, border: true },
     // exitGame: { title: 'x', img: '', leftX: 0.990, topY: 0.015, width: 16, height: 18, border: false },
 };
 
