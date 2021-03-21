@@ -8,6 +8,8 @@ export const ctx = canvas.getContext("2d");
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
+debugger
+
 export const drawCanvas = () => {
   clearCanvas()
   if (GAME_MODE) {
