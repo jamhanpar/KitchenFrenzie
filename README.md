@@ -1,44 +1,41 @@
 ### Background and Overview
-Learning how to cook can be quite daunting, but it doesn't have to be with quick and easy instructions and an interactive tutorial demonstrating the different steps to follow. For demonstration purposes, we'll be learning how to make pasta.
+During a season of COVID, I started to learn the joys of cooking and incorporating different ingredients as well as various kitchenware to perfect a few dishes. Kitchen Frenzie is a javascript game that encompasses some of the challenges in the kitchen using an entertaining approach. The objective of this project is to help me improve my Javascript skills as well as showcase some of the unique and fun effects you can create using Javascript.
 
 ### Functionality and MVPs
-- User can drag and drop ingredients from their fridge
-- User can turn the dial on the stove
-- User can move knife up and down to chop ingredients
-- User can turn the page by scrolling up and down
+- User can click each element (kitchenware/ingredient) to initiate animation
+- User can press start to play game
+- User can move the mouse left and right to moving a rolling pin
+- Ingredients will self-destruct on collision with the ball (i.e. bagel)
 
 ### Wireframes
-![alt text](https://github.com/jamhanpar/javascript_project/blob/main/0.%20planning/images/wireframe.PNG?raw=true)
-
 - /src
     - /assets
     - index.js
     - /js
-        - Ingredient.js
-        - Board.js
-        - Pot.js
-        - Stove.js
-        - Knife.js
-        - Book.js
-        - Plate.js
-        - Tutorial.js
+        - Canvas.js
+        - Game.js
+        - Props.js
+        - Paddle.js
+        - Button.js
+        - Ball.js
     - /stylesheets
-        - [...]
+        - main.css
 
 ### Architecture and Technology
-- Three.js
+- Javascript
 
 ### Implementation Timeline
-- Day 1: Drag and drop ingredients
-- Day 2: Knife Chopping Up and Down
-- Day 3: Stove Knob Adjustment
-- Day 4: Flip Pages on Scroll
-- Day 5: Timer
+- Day 1: User Instructions
+- Day 2: Props and animation
+- Day 3: Prop collision
+- Day 4: Paddle & ball with collision
+- Day 5: Game mode
 
 ### Bonus Features
-- Add new ingredients
-- Menu Selection
+- Click for unique animations
+- Timer for game difficulty
 
 ### Run Instructions
 - npm install
+- npm run webpack:build
 - npm run start
