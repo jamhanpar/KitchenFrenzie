@@ -26,18 +26,41 @@ function writeInstructions() {
   const fontSize = canvas.height * 0.015;
   const width = canvas.width * 0.33; // 996px;
   const height = canvas.height * 0.175; // 176px;
+  let text = "To start, press Play. Move your mouse left and right to control the rolling pin. Use the pin to deflect the bagel and calm the kitchen frenzy! Cooking can be chaotic! Sometimes, it's easier to explore one ingredient at a time. Click each kitchenware or ingredient and watch them run wild.";
+  let words = text.split(' ');
+  let maxWidth = width-25;
+  let lineHeight = height*0.15;
+  let line = '';
+  let y = canvas.height*0.43;
+
   ctx.font = fontSize.toString() + 'px Montserrat';
   ctx.fillStyle = 'rgba(242,246,248,0.7)';
   ctx.fillRect(canvas.width*0.5-width/2, canvas.height*0.5-height/1.25, width, height);
-  // ctx.lineJoin = "round";
-  // ctx.lineWidth = 20;
+  // // ctx.lineJoin = "round";
+  // // ctx.lineWidth = 20;
   ctx.fillStyle = "black";
   ctx.fillText("Made by James Park", canvas.width*0.021, canvas.height * 0.97);
   ctx.fillText("INSTRUCTIONS:", canvas.width*0.3475, canvas.height*0.395);
-  ctx.fillText("To start, press Play. Move your mouse left and right to control the rolling pin.", canvas.width*0.3475, canvas.height*0.43);
-  ctx.fillText("Use the pin to deflect the bagel and calm the kitchen frenzy!", canvas.width*0.3475, canvas.height*0.45);
-  ctx.fillText("Cooking can be chaotic! Sometimes, it's easier to explore one ingredient at a time.", canvas.width*0.3475, canvas.height*0.49);
-  ctx.fillText("Click each kitchenware or ingredient and watch them run wild.", canvas.width*0.3475, canvas.height*0.51);
+  // ctx.fillText("To start, press Play. Move your mouse left and right to control the rolling pin.", canvas.width*0.3475, canvas.height*0.43);
+  // ctx.fillText("Use the pin to deflect the bagel and calm the kitchen frenzy!", canvas.width*0.3475, canvas.height*0.45);
+  // ctx.fillText("Cooking can be chaotic! Sometimes, it's easier to explore one ingredient at a time.", canvas.width*0.3475, canvas.height*0.49);
+  // ctx.fillText("Click each kitchenware or ingredient and watch them run wild.", canvas.width*0.3475, canvas.height*0.51);
+
+  for (let i = 0; i < words.length; i++){
+    let testLine = line + words[i] + ' ';
+    let metrics = ctx.measureText(testLine);
+    let testWidth = metrics.width;
+
+    if (testWidth > maxWidth && i > 0) {
+      ctx.fillText(line, canvas.width*0.3475, y);
+      line = words[i] + ' ';
+      y += lineHeight;
+    } else {
+      line = testLine;
+    }
+  }
+
+  ctx.fillText(line, canvas.width*0.3475, y);
 }
 
 // click event listener

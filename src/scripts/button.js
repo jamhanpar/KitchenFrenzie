@@ -53,7 +53,7 @@ class Button {
                 window.open("https://www.linkedin.com/in/jameshansungpark/");
                 break;
               case "Github":
-                window.open("https://github.com/jamhanpar");
+                window.open("https://github.com/jamhanpar/KitchenFrenzie");
                 break;
               case "AngelList":
                 window.open("https://angel.co/u/jameshansungpark");
