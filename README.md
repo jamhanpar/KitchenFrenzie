@@ -35,6 +35,7 @@ During a season of COVID, I started to learn the joys of cooking and incorporati
 ### Bonus Features
 - Click for unique animations
 - Timer for game difficulty
+- Add sound effects when objects collide with the bagel
 
 ### Run Instructions
 - npm install
