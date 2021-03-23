@@ -23,6 +23,7 @@ During a season of COVID, I started to learn the joys of cooking and incorporati
 
 ### Architecture and Technology
 - Javascript
+- Google Fonts
 
 ### Implementation Timeline
 - Day 1: User Instructions
