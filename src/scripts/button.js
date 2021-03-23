@@ -96,8 +96,6 @@ export function drawButtons() {
         buttonNames.slice(0, 4).forEach(name => {
             buttonList[name].draw();
         })
-    } else {
-        buttonList['exitGame'].draw();
     }
 }
 
