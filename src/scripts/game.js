@@ -34,7 +34,7 @@ export const animateGame = () => {
   game.update();
   if (game.showEndGameMessage) { 
     showMessage();
-    setTimeout(() => window.location.reload(), 1000);
+    setTimeout(() => window.location.reload(), 0);
   } else {
     showLives();
     animateAllItems();
