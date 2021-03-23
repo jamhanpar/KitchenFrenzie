@@ -34,6 +34,7 @@ export const animateGame = () => {
   game.update();
   if (game.showEndGameMessage) { 
     showMessage();
+    setTimeout(() => window.location.reload(), 1000);
   } else {
     showLives();
     animateAllItems();
@@ -52,9 +53,6 @@ function showMessage() {
       canvas.width / 2 - ctx.measureText(winText).width / 2,
       canvas.height / 2
     );
-
-    setTimeout(() => { window.location.reload(false) }, 3000);
-    return;
   } else {
     let loseText = "You lose! Better luck next time!";
     ctx.fillText(
@@ -62,8 +60,6 @@ function showMessage() {
       canvas.width / 2 - ctx.measureText(loseText).width / 2,
       canvas.height / 2
     );
-    setTimeout(() => { window.location.reload(false) }, 3000);
-    return;
   }
 }
 
