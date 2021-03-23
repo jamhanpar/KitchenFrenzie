@@ -5,7 +5,6 @@ During a season of COVID, I started to learn the joys of cooking and incorporati
 ### Prerequisites & Dependencies
 - You have a basic understanding of vanilla Javascript and Javascript ES6.
 - You have a basic understanding of event handlers.
-- 
 - Webpack 4.44.2
 - Sass 1.27.0
 - NPM 6.4.1
