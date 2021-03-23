@@ -8,8 +8,6 @@ During a season of COVID, I started to learn the joys of cooking and incorporati
 - Ingredients will self-destruct on collision with the ball (i.e. bagel)
 
 ### Wireframes
-![alt text](https://github.com/jamhanpar/javascript_project/blob/main/0.%20planning/images/wireframe.PNG?raw=true)
-
 - /src
     - /assets
     - index.js
