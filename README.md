@@ -12,7 +12,7 @@ During a season of COVID, I started to learn the joys of cooking and incorporati
 ### Functionality and MVPs
 - User can click each element (kitchenware/ingredient) to initiate animation
 - User can press start to play game
-- User can move the mouse left and right to moving a rolling pin
+- User can move the mouse left and right to move the paddle
 - Ingredients will self-destruct on collision with the ball (i.e. bagel)
 
 ### Wireframes
