@@ -18,11 +18,9 @@ if (
   rect1.y < rect2.y + rect2.height &&
   rect1.y + rect1.height > rect2.y
 ) {
-  console.log('collided')
 }
 
 // filling in the values =>
 
 if (5 < 30 && 55 > 20 && 5 < 20 && 55 > 10) {
-  console.log('not collided')
 }

@@ -40,11 +40,9 @@ export function animate() {
   if (getDistance(c1.x, c1.y, c2.x, c2.y) < c1.radius + c2.radius) {
     c1.color = 'red';
     c2.color = 'red';
-    console.log('true');
   } else {
     c1.color = 'black';
     c2.color = "black";
-    console.log("false");
   }
   c1.draw();
   c2.draw();

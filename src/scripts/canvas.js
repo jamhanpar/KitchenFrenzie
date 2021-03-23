@@ -78,7 +78,6 @@ canvas.addEventListener("click", function(e) {
       buttonList[name].handleClick(mouse.x, mouse.y);
     })
   } else {
-    console.log(buttonList['exitGame'])
     buttonList['exitGame'].handleClick(mouse.x, mouse.y);
   }
 });

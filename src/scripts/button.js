@@ -46,8 +46,6 @@ class Button {
             this.y < ymouse &&
             this.y + this.button.height > ymouse
             ) { 
-            console.log(`${this.button} button clicked`);
-            // console.log(`${this.button.title} has been clicked`);
             switch (this.button.title) {
               case "LinkedIn":
                 window.open("https://www.linkedin.com/in/jameshansungpark/");

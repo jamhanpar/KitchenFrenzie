@@ -152,7 +152,6 @@ function checkPropsBallCollision() {
 }
 
 export function checkDrawnPropsEmpty() {
-  console.log(propNames.length);
   if (propNames.length === 0) {
     return true;
   }
