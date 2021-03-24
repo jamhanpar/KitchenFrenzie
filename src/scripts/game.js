@@ -34,7 +34,6 @@ export const animateGame = () => {
   game.update();
   if (game.showEndGameMessage) { 
     showMessage();
-    setTimeout(() => window.location.reload(), 0);
   } else {
     showLives();
     animateAllItems();
@@ -61,6 +60,9 @@ function showMessage() {
       canvas.height / 2
     );
   }
+  console.log("initiating refresh")
+  setTimeout(() => window.location.reload(), 0);
+  console.log("refreshed")
 }
 
 function showLives() {
