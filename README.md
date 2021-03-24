@@ -2,10 +2,17 @@
 ![alt text](https://github.com/jamhanpar/KitchenFrenzie/blob/main/dist/images/frontPage.png?raw=true)
 During a season of COVID, I started to learn the joys of cooking and incorporating different ingredients as well as various kitchenware to perfect a few dishes. Kitchen Frenzie is a javascript game that encompasses some of the challenges in the kitchen using an entertaining approach. The objective of this project is to help me improve my Javascript skills as well as showcase some of the unique and fun effects you can create using Javascript.
 
+### Prerequisites & Dependencies
+- You have a basic understanding of vanilla Javascript and Javascript ES6.
+- You have a basic understanding of event handlers.
+- Webpack 4.44.2
+- Sass 1.27.0
+- NPM 6.4.1
+
 ### Functionality and MVPs
 - User can click each element (kitchenware/ingredient) to initiate animation
 - User can press start to play game
-- User can move the mouse left and right to moving a rolling pin
+- User can move the mouse left and right to move the paddle
 - Ingredients will self-destruct on collision with the ball (i.e. bagel)
 
 ### Wireframes
@@ -38,7 +45,7 @@ During a season of COVID, I started to learn the joys of cooking and incorporati
 - Timer for game difficulty
 - Add sound effects when objects collide with the bagel
 
-### Run Instructions
+### Run Instructions & Installations
 - npm install
 - npm run webpack:build
 - npm run start
