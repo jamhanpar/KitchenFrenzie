@@ -24,16 +24,19 @@
     <div class='canvas-container'>
       <img class="bg-img" src="src/images/kitchen_top_edited.jpg">
       <canvas id="game-canvas"></canvas>
+      <div>
+        <p>Hello, this is random text.</p>
+      </div>
     </div>
   </div>
   <script src="./dist/main.js"></script>
 
   <script>
     const canvas = document.getElementById("game-canvas"),
-        ctx = canvas.getContext("2d");
+    ctx = canvas.getContext("2d");
 
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight-3;
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight-3;
   </script>
 </body>
 

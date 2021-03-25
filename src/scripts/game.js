@@ -2,7 +2,7 @@ import { canvas, ctx } from "./canvas";
 import { animateBall } from "./ball";
 import { animatePaddle } from "./paddle";
 import { animateAllItems, checkDrawnPropsEmpty } from "./props";
-// import { GAME_MODE } from "./button";
+import { INTERVALID } from "../index";
 
 class Game {
   constructor() {
@@ -60,9 +60,8 @@ function showMessage() {
       canvas.height / 2
     );
   }
-  console.log("initiating refresh")
-  setTimeout(() => window.location.reload(), 0);
-  console.log("refreshed")
+  clearInterval(INTERVALID)
+  setTimeout(() => window.location.reload(), 2000);
 }
 
 function showLives() {
