@@ -1,0 +1,14 @@
+#instructions-container {
+    border: 1px solid blue;
+    width: 50%;
+    height: 50%;
+    position: absolute;
+    left: 50px;
+    top: 50px;
+    z-index: 5;
+}
+
+#instructions-text {
+    color: blue;
+    font-size: 50px;
+}
