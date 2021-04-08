@@ -45,15 +45,15 @@ class Button {
             this.y + this.button.height > ymouse
             ) { 
             switch (this.button.title) {
-              case "LinkedIn":
-                window.open("https://www.linkedin.com/in/jameshansungpark/");
-                break;
-              case "Github":
-                window.open("https://github.com/jamhanpar/KitchenFrenzie");
-                break;
-              case "AngelList":
-                window.open("https://angel.co/u/jameshansungpark");
-                break;
+            //   case "LinkedIn":
+            //     window.open("https://www.linkedin.com/in/jameshansungpark/");
+            //     break;
+            //   case "Github":
+            //     window.open("https://github.com/jamhanpar/KitchenFrenzie");
+            //     break;
+            //   case "AngelList":
+            //     window.open("https://angel.co/u/jameshansungpark");
+            //     break;
               case "Play":
                 toggleGameMode();
                 document.getElementById("navbar-container").style.display = "none";
