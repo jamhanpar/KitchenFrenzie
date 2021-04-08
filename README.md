@@ -10,7 +10,6 @@ Checkout the live demo: https://www.jameshansungpark.com/KitchenFrenzie/
 # Features in Progress
 
 # Technologies & Implementation
-
 ### Prerequisites & Dependencies
 - You have a basic understanding of vanilla Javascript and Javascript ES6.
 - You have a basic understanding of event handlers.
