@@ -6,6 +6,8 @@ During a season of COVID, I started to learn the joys of cooking and incorporati
 Checkout the live demo: https://www.jameshansungpark.com/KitchenFrenzie/
 
 # App Features
+## Pin Moves based on Mouse Movement
+![alt text](https://github.com/jamhanpar/KitchenFrenzie/blob/main/dist/images/frontPage.png?raw=true)
 
 # Features in Progress
 
