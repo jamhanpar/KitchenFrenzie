@@ -64,7 +64,7 @@ Currently, you can click each kitchenware or ingredient and it will activate the
 - Timer for game difficulty
 - Add sound effects when objects collide with the bagel
 
-### Run Instructions & Installations
+# Installations & Run Instructions
 - npm install
 - npm run webpack:build
 - npm run start
