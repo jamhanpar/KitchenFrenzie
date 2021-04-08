@@ -7,7 +7,7 @@ Checkout the live demo: https://www.jameshansungpark.com/KitchenFrenzie/
 
 # App Features
 ## Pin Moves based on Mouse Movement
-![alt text](https://github.com/jamhanpar/KitchenFrenzie/blob/main/dist/images/frontPage.png?raw=true)
+![alt text](https://github.com/jamhanpar/KitchenFrenzie/blob/main/src/images/Kitchen_Frenzie_Intro_GIF.gif?raw=true)
 
 # Features in Progress
 
