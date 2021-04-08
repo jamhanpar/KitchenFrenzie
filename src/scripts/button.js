@@ -71,7 +71,7 @@ const buttons = {
     // linkedIn: { title: 'LinkedIn', img: 'linkedIn-icon', leftX: 0.02, topY: 0.015, width: 40, height: 40, border: false},
     // github: { title: 'Github', img:'github-icon', leftX: 0.05, topY: 0.015, width: 40, height: 40, border: false },
     // AngelList: { title: 'AngelList', img: 'angellist-icon', leftX: 0.08, topY: 0.015, width: 40, height: 40, border: false},
-    playGame: { title: 'Play', img: '', leftX: 0.465, topY: 0.045, width: 110, height: 40, border: true },
+    playGame: { title: 'Play', img: '', leftX: 0.465, topY: 0.29, width: 110, height: 40, border: true },
 };
 
 // button names and list of button objects
