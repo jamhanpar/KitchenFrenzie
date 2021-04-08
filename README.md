@@ -5,6 +5,12 @@ During a season of COVID, I started to learn the joys of cooking and incorporati
 # Demo
 Checkout the live demo: https://www.jameshansungpark.com/KitchenFrenzie/
 
+# App Features
+
+# Features in Progress
+
+# Technologies & Implementation
+
 ### Prerequisites & Dependencies
 - You have a basic understanding of vanilla Javascript and Javascript ES6.
 - You have a basic understanding of event handlers.
