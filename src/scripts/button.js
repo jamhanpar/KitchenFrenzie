@@ -29,10 +29,8 @@ class Button {
             ctx.fillStyle = 'black';
             ctx.font = '20px sans serif';
 
-            if (this.button.title === 'Play Game') {
-                ctx.fillText(this.button.title, this.x+11, this.y+25);
-            } else if (this.button.title === 'x') {
-                ctx.fillText(this.button.title, this.x+3, this.y+14);
+            if (this.button.title === 'Play') {
+                ctx.fillText(this.button.title, this.x+40, this.y+25);
             } else {
                 ctx.fillText(this.button.title, this.x, this.y);
             }
@@ -56,13 +54,11 @@ class Button {
               case "AngelList":
                 window.open("https://angel.co/u/jameshansungpark");
                 break;
-              case "Play Game":
+              case "Play":
                 toggleGameMode();
+                document.getElementById("navbar-container").style.display = "none";
+                document.getElementById("instructions-container").style.display = "none";
                 break;
-            //   case "x":
-            //     // refresh page after click
-            //     window.location.reload(false);
-            //     break;
               default:
                 break;
             }
@@ -72,11 +68,10 @@ class Button {
 
 // add new buttons
 const buttons = {
-    linkedIn: { title: 'LinkedIn', img: 'linkedIn-icon', leftX: 0.02, topY: 0.015, width: 40, height: 40, border: false},
-    github: { title: 'Github', img:'github-icon', leftX: 0.05, topY: 0.015, width: 40, height: 40, border: false },
-    AngelList: { title: 'AngelList', img: 'angellist-icon', leftX: 0.08, topY: 0.015, width: 40, height: 40, border: false},
-    playGame: { title: 'Play Game', img: '', leftX: 0.475, topY: 0.55, width: 110, height: 40, border: true },
-    // exitGame: { title: 'x', img: '', leftX: 0.990, topY: 0.015, width: 16, height: 18, border: false },
+    // linkedIn: { title: 'LinkedIn', img: 'linkedIn-icon', leftX: 0.02, topY: 0.015, width: 40, height: 40, border: false},
+    // github: { title: 'Github', img:'github-icon', leftX: 0.05, topY: 0.015, width: 40, height: 40, border: false },
+    // AngelList: { title: 'AngelList', img: 'angellist-icon', leftX: 0.08, topY: 0.015, width: 40, height: 40, border: false},
+    playGame: { title: 'Play', img: '', leftX: 0.465, topY: 0.045, width: 110, height: 40, border: true },
 };
 
 // button names and list of button objects

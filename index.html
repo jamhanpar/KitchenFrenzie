@@ -10,10 +10,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <link rel="stylesheet" type="text/css" href="./src/styles/reset.css">
   <link rel="stylesheet" type="text/css" href="./dist/main.css" />
+  <link rel="stylesheet" type="text/css" href="./src/styles/reset.css">
   <link rel="stylesheet" type="text/css" href="./src/styles/styles.css"/>
   <link rel="stylesheet" type="text/css" href="./src/styles/instructions.css"/>
+  <link rel="stylesheet" type="text/css" href="./src/styles/navbar.css"/>
   <link id="favicon" rel="shortcut icon" type="image/png" href="src/images/FOOD/bread11.png" />
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
@@ -22,12 +23,23 @@
 
 <body>
   <div class="container">
+    <!-- <img class="bg-img" src="src/images/kitchen_top_edited.jpg"> -->
     <div class='canvas-container'>
+      <div id="navbar-container" class="navbar-container">
+        <ul class="navbar-list">
+          <!-- <li class="navbar-item"><a href="https://www.jameshansungpark.com" target="_blank"><img class="link-icon" src="src/images/ICON/linkedIn-icon.png" alt="linkedIn"></a></li> -->
+          <li class="navbar-item"><a href="https://www.linkedin.com/in/jameshansungpark/" target="_blank"><img class="link-icon" src="src/images/ICON/linkedIn-icon.png" alt="linkedIn"></a></li>
+          <li class="navbar-item"><a href="https://github.com/jamhanpar/KitchenFrenzie" target="_blank"><img class="link-icon" src="src/images/ICON/github-icon.png" alt="linkedIn"></a></li>
+          <li class="navbar-item"><a href="https://angel.co/u/jameshansungpark" target="_blank"><img class="link-icon" src="src/images/ICON/angellist-icon.png" alt="linkedIn"></a></li>
+        </ul>
+      </div>
+      <div id="instructions-container" class="instructions-container">
+        <p class="instructions-title">INSTRUCTIONS</p>
+        <p class="instructions-text">To start, press Play. Move your mouse left and right to control the rolling pin. Use the pin to deflect the bagel and calm the kitchen frenzy!</p>
+        <p class="instructions-text">Cooking can be chaotic! Sometimes, it's easier to explore one ingredient at a time. Click each kitchenware or ingredient and watch them run wild."</p>
+      </div>
       <img class="bg-img" src="src/images/kitchen_top_edited.jpg">
       <canvas id="game-canvas"></canvas>
-      <div class="instructions-container">
-        <p class="instructions-text">To start, press Play. Move your mouse left and right to control the rolling pin. Use the pin to deflect the bagel and calm the kitchen frenzy! Cooking can be chaotic! Sometimes, it's easier to explore one ingredient at a time. Click each kitchenware or ingredient and watch them run wild."</p>
-      </div>
     </div>
   </div>
   <script src="./dist/main.js"></script>

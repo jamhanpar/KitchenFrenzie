@@ -1,0 +1,22 @@
+.navbar-container {
+    position: absolute;
+    top: 1vh;
+    left: 3vh;
+    z-index: 100;
+}
+
+.navbar-list {
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+}
+
+.navbar-item {
+    padding: 2px;
+}
+
+.link-icon {
+    width: 40px;
+    height: auto;
+}

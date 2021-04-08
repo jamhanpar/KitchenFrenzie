@@ -67,5 +67,5 @@ function showMessage() {
 function showLives() {
   ctx.fillStyle = "black";
   ctx.font = "20px montserrat";
-  ctx.fillText("lives: " + game.lives, canvas.width * 0.485, canvas.height * 0.075);
+  ctx.fillText("lives: " + game.lives, canvas.width * 0.485, canvas.height * 0.155);
 }

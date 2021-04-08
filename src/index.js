@@ -1,5 +1,10 @@
 import { canvas, drawCanvas } from "./scripts/canvas";
 
+// import { canvas, drawCanvas } from "./scripts/canvas";
+// import './styles/reset.css';
+// import './styles/instructions.css';
+// import './styles/styles.css';
+
 export let INTERVALID;
 
 window.onload = function () {
