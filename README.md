@@ -1,5 +1,4 @@
 # Kitchen Frenzie
-![alt text](https://github.com/jamhanpar/KitchenFrenzie/blob/main/dist/images/frontPage.png?raw=true)
 During a season of COVID, I started to learn the joys of cooking and incorporating different ingredients as well as various kitchenware to perfect a few dishes. Kitchen Frenzie is a javascript game that encompasses some of the challenges in the kitchen using an entertaining approach. The objective of this project is to help me improve my Javascript skills as well as showcase some of the unique and fun effects you can create using Javascript.
 
 # Demo
