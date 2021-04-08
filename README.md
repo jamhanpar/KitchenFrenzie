@@ -6,10 +6,19 @@ During a season of COVID, I started to learn the joys of cooking and incorporati
 Checkout the live demo: https://www.jameshansungpark.com/KitchenFrenzie/
 
 # App Features
-## Pin Moves based on Mouse Movement
+## Mouse Movement Detection
+As you move the mouse left and right, the rolling pin will move in vertical alignment with your mouse. This allows you to deflect the bagel and activate the ball and item collision.
 ![alt text](https://github.com/jamhanpar/KitchenFrenzie/blob/main/src/images/Kitchen_Frenzie_Intro_GIF.gif?raw=true)
 
+## Prop (Kitchenware / Ingredients) Collision Detection
+While in game mode, an event listener is constantly checking to see if the ball and an item has intersected and will remove the item on collision.
+
+## Ball and Paddle Collision Detection
+While in game mode, the ball will reverse it's velocity if it collides with the paddle. Depending on where the ball hits the paddle, the ball will accelerate more or less.
+
 # Features in Progress
+## Click Unique Animations - Work in Progress
+Currently, you can click each kitchenware or ingredient and it will activate the game animation. Moving forward, I'd love to explore other interesting animations in the world of javascript and apply them to display unique animations for each item.
 
 # Technologies & Implementation
 ### Prerequisites & Dependencies
