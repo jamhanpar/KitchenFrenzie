@@ -24,8 +24,8 @@ const clearCanvas = () => ctx.clearRect(0, 0, canvas.width, canvas.height);
 function writeInstructions() {
   ctx.fillStyle = 'black';
   const fontSize = canvas.height * 0.015;
-  const width = canvas.width * 0.33; // 996px;
-  const height = canvas.height * 0.175; // 176px;
+  const width = canvas.width * 0.33;          // 996px;
+  const height = canvas.height * 0.175;       // 176px;
   // let text = "To start, press Play. Move your mouse left and right to control the rolling pin. Use the pin to deflect the bagel and calm the kitchen frenzy! Cooking can be chaotic! Sometimes, it's easier to explore one ingredient at a time. Click each kitchenware or ingredient and watch them run wild.";
   // let words = text.split(' ');
   let maxWidth = width-25;
