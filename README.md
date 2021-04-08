@@ -8,6 +8,7 @@ Checkout the live demo: https://www.jameshansungpark.com/KitchenFrenzie/
 # App Features
 ## Mouse Movement Detection
 As you move the mouse left and right, the rolling pin will move in vertical alignment with your mouse. This allows you to deflect the bagel and activate the ball and item collision.
+
 ![alt text](https://github.com/jamhanpar/KitchenFrenzie/blob/main/src/images/Kitchen_Frenzie_Intro_GIF.gif?raw=true)
 
 ## Prop (Kitchenware / Ingredients) Collision Detection
